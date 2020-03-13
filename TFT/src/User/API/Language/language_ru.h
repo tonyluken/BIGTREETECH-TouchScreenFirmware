@@ -85,9 +85,9 @@
     #define RU_X_DEC                "X-"
     #define RU_Y_DEC                "Y-"
     #define RU_Z_DEC                "Z-"
-    #define RU_X_HOME               "X"
-    #define RU_Y_HOME               "Y"
-    #define RU_Z_HOME               "Z"
+    #define RU_X                    "X"
+    #define RU_Y                    "Y"
+    #define RU_Z                    "Z"
     #define RU_001_MM               "0.01mm"
     #define RU_01_MM                "0.1mm"
     #define RU_1_MM                 "1mm"
@@ -131,7 +131,7 @@
     #define RU_PREHEAT_CUSTOM2      "CUSTOM2"
     #define RU_IS_PAUSE             "Невозможна экструзия при печати, поставить на паузу?"
     #define RU_AUTO_SHUT_DOWN       "Автопитание"
-    #define RU_MANUAL_SHUT_DOWN     "Выключить"    
+    #define RU_MANUAL_SHUT_DOWN     "Выключить"
     #define RU_UNIFIEDMOVE          "Движение"
     #define RU_UNIFIEDHEAT          "Нагрев"
     #define RU_COOLDOWN             "Охладить"
@@ -147,6 +147,7 @@
     #define RU_AUTO                 "Авто"
     #define RU_SMART                "Умный"
     #define RU_TERMINAL_ACK         "Скрыть ACK терминала"
+	#define RU_INVERT_XAXIS         "Инверсия оси X"
     #define RU_INVERT_YAXIS         "Инверсия оси Y"
     #define RU_INVERT_ZAXIS         "Инверсия оси Z"
     #define RU_MOVE_SPEED           "Скорость (X Y Z)"
@@ -156,5 +157,7 @@
     #define RU_SEND_END_GCODE       "Gcode после печати"
     #define RU_PERSISTANT_STATUS_INFO "Нагрев в инфостроке"
     #define RU_FILE_LISTMODE        "Файлы в режиме строк"
-    
+    #define RU_CURRENT_SETTING      "Driver Current Settings"
+    #define RU_STEPS_SETTING        "Steps per MM Settings"
+
 #endif

@@ -94,11 +94,11 @@ void menuCustom(void)
       case KEY_ICON_7:
         infoMenu.cur--;
         break;
-      
+
       default:
         break;
     }
-    loopProcess();		
+    loopProcess();
   }
 }
 #else
@@ -167,10 +167,10 @@ void menuCustom(void)
     #ifdef CUSTOM_14_GCODE
     CKEY14,
     #endif
-    
+
     CKEY_COUNT //keep this always at the end
-    }CKEY_LIST; 
-    
+    }CKEY_LIST;
+
     #define GC_PAGE_COUNT  (CKEY_COUNT+LISTITEM_PER_PAGE-1)/LISTITEM_PER_PAGE
     int gc_cur_page = 0;
 
@@ -242,7 +242,8 @@ void menuCustom(void)
         if (item_index < CKEY_COUNT){
           customItems.items[i].icon = ICONCHAR_CODE;
           customItems.items[i].titlelabel.index = LABEL_DYNAMIC;
-          dynamic_label[i] = (char *)gcodelist[item_index][0];
+          //dynamic_label[i] = (char *)gcodelist[item_index][0];
+          setDynamicLabel(i,(char *)gcodelist[item_index][0]);
         }
         else{
           customItems.items[i].icon = ICONCHAR_BACKGROUND;
@@ -315,7 +316,7 @@ void menuCustom(void)
       default:
         break;
     }
-    loopProcess();		
+    loopProcess();
   }
 }
 
@@ -349,31 +350,31 @@ void menuRGBSettings(void)
       case KEY_ICON_0:  //Red
         storeCmd("M150 R255 U0 B0 P255\n");
         break;
-      
+
       case KEY_ICON_1:  //Green
         storeCmd("M150 R0 U255 B0 P255\n");
         break;
-      
+
       case KEY_ICON_2:  //Blue
         storeCmd("M150 R0 U0 B255 P255\n");
         break;
-      
+
       case KEY_ICON_3:  //White
         storeCmd("M150 R255 U255 B255 P255\n");
         break;
-      
+
       case KEY_ICON_4:  //Turn Off
         storeCmd("M150 R0 U0 B0 P0\n");
         break;
-      
+
       case KEY_ICON_7:
         infoMenu.cur--;
         break;
-      
+
       default:
         break;
     }
-    loopProcess();		
+    loopProcess();
   }
 }
 
@@ -395,9 +396,9 @@ LABEL_MACHINE_SETTINGS,
 void menuMachineSettings(void)
 {
   KEY_VALUES key_num = KEY_IDLE;
-  
+
   menuDrawPage(&machineSettingsItems);
-  
+
   while(infoMenu.menu[infoMenu.cur] == menuMachineSettings)
   {
     key_num = menuKeyGetValue();
@@ -406,15 +407,15 @@ void menuMachineSettings(void)
       case KEY_ICON_0:
         infoMenu.menu[++infoMenu.cur] =  menuCustom;
         break;
-      
+
       case KEY_ICON_1:
         infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
         break;
-      
+
       case KEY_ICON_2:
         infoMenu.menu[++infoMenu.cur] = menuSendGcode;
         break;
-      
+
       case KEY_ICON_3:
         storeCmd("M81\n");
         break;
@@ -422,15 +423,15 @@ void menuMachineSettings(void)
       case KEY_ICON_4:
         infoMenu.menu[++infoMenu.cur] = parametersetting;
         break;
-      
+
       case KEY_ICON_7:
         infoMenu.cur--;
         break;
-      
+
       default:
         break;
     }
-    
-    loopProcess();  
+
+    loopProcess();
   }
 }
