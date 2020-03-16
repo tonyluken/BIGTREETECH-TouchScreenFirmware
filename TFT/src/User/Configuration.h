@@ -114,7 +114,6 @@
 //                       PLA      PETG       ABS
 #define PREHEAT_BED      {60,      70,       100}
 #define PREHEAT_HOTEND   {200,     250,      230}
-#define PREHEAT_TEXT     {"PLA",  "PETG",   "ABS"}
 
 #define HEAT_MAX_TEMP    {150,    275,       275,       275,       275,       275,       275}    //max temperature can be set
 #define HEAT_SIGN_ID     {"B:",   "T0:",     "T1:",     "T2:",     "T3:",     "T4:",     "T5:"}
@@ -163,7 +162,7 @@
 #ifdef AUTO_BED_LEVELING
   // Enable this will send "M500" after "G29" to store leveling value
   // and send "M420 S1" to enable leveling state after startup
-  #define AUTO_SAVE_LOAD_LEVELING_VALUE
+  //#define AUTO_SAVE_LOAD_LEVELING_VALUE
 #endif
 
 // Move to four corner points to Leveling manually (Point 1, Point 2, Point 3, Point 4)
@@ -231,8 +230,6 @@
   * turn on the fan to cool down, wait for the hotend temperature to be lower than this value, then turn off the power automatically
   */
 #define AUTO_SHUT_DOWN_MAXTEMP 50
-
-#define EXTRUDE_STEPS  100.0f
 
 #define SHOW_FAN_PERCENTAGE // enable to show fan speed as a percentage instead of a value
 
